@@ -1,0 +1,50 @@
+.pricing{
+padding:100px 0;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.price-card{
+background:#111;
+border:1px solid #222;
+padding:30px;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.price-card:hover{
+transform:translateY(-6px);
+border-color:#444;
+}
+
+.price{
+font-size:28px;
+margin:15px 0;
+}
+
+.price-card ul{
+list-style:none;
+margin:20px 0;
+}
+
+.price-card li{
+margin-bottom:10px;
+color:#bcbcbc;
+}
+
+.popular{
+border:1px solid #4da6ff;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+.pricing-grid{
+grid-template-columns:1fr;
+}
+}

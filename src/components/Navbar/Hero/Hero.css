@@ -1,0 +1,184 @@
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding-top:100px;
+}
+
+.hero-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:50px;
+}
+
+.hero-left h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.hero-role{
+font-size:28px;
+margin-bottom:20px;
+color:#cfcfcf;
+}
+
+.hero-desc{
+color:#bcbcbc;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+.hero-right img{
+width:350px;
+border-radius:12px;
+filter:grayscale(100%);
+}
+
+.hero-left .cv-btn{
+padding:12px 22px;
+border-radius:8px;
+border:1px solid #333;
+background:#1a1a1a;
+color:white;
+cursor:pointer;
+margin-bottom:25px;
+}
+
+.hero-left .cv-btn:hover{
+background:#2a2a2a;
+}
+
+.socials{
+display:flex;
+gap:15px;
+}
+
+.socials span{
+width:35px;
+height:35px;
+border-radius:6px;
+background:#1a1a1a;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+.socials span:hover{
+background:#2a2a2a;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width:900px){
+
+.hero-wrapper{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-right{
+order:-1;
+}
+
+.hero-right img{
+width:250px;
+}
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:600px){
+
+.hero-left h1{
+font-size:36px;
+}
+
+.hero-role{
+font-size:22px;
+}
+
+.hero-desc{
+font-size:14px;
+}
+
+}
+
+
+/* .hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding-top:80px;
+}
+
+.hero-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:40px;
+}
+
+.hero-left{
+max-width:500px;
+}
+
+.intro{
+color:#9a9a9a;
+margin-bottom:10px;
+}
+
+.hero-left h1{
+font-size:48px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.hero-desc{
+color:#bcbcbc;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+.cv-btn{
+padding:12px 22px;
+border-radius:8px;
+border:1px solid #333;
+background:#1a1a1a;
+color:white;
+cursor:pointer;
+margin-bottom:25px;
+}
+
+.cv-btn:hover{
+background:#2a2a2a;
+}
+
+.socials{
+display:flex;
+gap:15px;
+}
+
+.socials span{
+width:35px;
+height:35px;
+border-radius:6px;
+background:#1a1a1a;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+.hero-right{
+display:flex;
+justify-content:center;
+}
+
+.hero-right img{
+width:350px;
+border-radius:12px;
+filter:grayscale(100%);
+} */
