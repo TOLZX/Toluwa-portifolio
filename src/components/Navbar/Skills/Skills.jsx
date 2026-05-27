@@ -2,84 +2,45 @@ import "./Skills.css"
 import { FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaNodeJs, FaPhp, FaBootstrap } from "react-icons/fa"
 import { SiJavascript, SiMongodb } from "react-icons/si"
 
+const skills = [
+  { icon: <FaHtml5/>, name: "HTML", desc: "Semantic structure and accessible markup.", color: "#e34c26" },
+  { icon: <FaCss3Alt/>, name: "CSS", desc: "Responsive layouts, flexbox, and grid.", color: "#264de4" },
+  { icon: <SiJavascript/>, name: "JavaScript", desc: "Interactive web functionality and logic.", color: "#f0db4f" },
+  { icon: <FaReact/>, name: "React", desc: "Component-based modern frontend development.", color: "#61dbfb" },
+  { icon: <FaGitAlt/>, name: "Git", desc: "Version control and project collaboration.", color: "#f05032" },
+  { icon: <SiMongodb/>, name: "MongoDB", desc: "NoSQL database for document-oriented storage.", color: "#4db33d" },
+  { icon: <FaNodeJs/>, name: "Node.js", desc: "Server-side JavaScript runtime environment.", color: "#6cc24a" },
+  { icon: <FaPhp/>, name: "PHP", desc: "Server-side scripting language.", color: "#8892be" },
+  { icon: <FaBootstrap/>, name: "Bootstrap", desc: "CSS framework for responsive design.", color: "#7952b3" },
+]
+
 export default function Skills(){
 
 return(
 
 <section className="skills" id="skills">
 
-<div className="container">
+  <div className="container">
 
-<h2 className="section-title">
-Skills
-</h2>
+    <p className="section-label">My Toolkit</p>
+    <h2 className="section-title">Skills</h2>
+    <p className="section-subtitle">
+      Technologies I use to build modern web experiences.
+    </p>
 
-<div className="skills-grid">
+    <div className="skills-grid">
 
-<div className="skill-card">
-<FaHtml5 size={35}/>
-<h3>HTML</h3>
-<p>Semantic structure and accessible markup.</p>
-</div>
+      {skills.map((s, i) => (
+        <div className="skill-card" key={i}>
+          <div className="skill-icon" style={{color: s.color}}>{s.icon}</div>
+          <h3>{s.name}</h3>
+          <p>{s.desc}</p>
+        </div>
+      ))}
 
-<div className="skill-card">
-<FaCss3Alt size={35}/>
-<h3>CSS</h3>
-<p>Responsive layouts, flexbox, and grid.</p>
-</div>
+    </div>
 
-<div className="skill-card">
-<SiJavascript size={35}/>
-<h3>JavaScript</h3>
-<p>Interactive web functionality and logic.</p>
-</div>
-
-<div className="skill-card">
-<FaReact size={35}/>
-<h3>React</h3>
-<p>Component-based modern frontend development.</p>
-</div>
-
-<div className="skill-card">
-<FaGitAlt size={35}/>
-<h3>Git</h3>
-<p>Version control and project collaboration.</p>
-</div>
-
-<div className="skill-card">
-<SiMongodb size={35}/>
-<h3>MongoDB</h3>
-<p>NoSQL database for document-oriented storage.</p>
-</div>
-
-<div className="skill-card">
-<FaNodeJs size={35}/>
-<h3>Node.js</h3>
-<p>Server-side JavaScript runtime environment.</p>
-</div>
-
-<div className="skill-card">
-    <FaPhp size={35}/>
-<h3>php</h3>
-<p>Server-side scripting language.</p>
-</div>
-
-<div className="skill-card">
-<FaBootstrap size={35}/>
-<h3>Bootstrap</h3>
-<p>Front-end CSS framework for responsive design.</p>
-</div>
-
-{/* <div className="skill-card">
-    <FaExpress size={35}/>
-    <h3>Express</h3>
-    <p>Web application framework for Node.js.</p>
-</div> */}
-
-
-</div>
-
-</div>
+  </div>
 
 </section>
 

@@ -1,69 +1,57 @@
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
+import { FaBars, FaTimes } from "react-icons/fa"
 import "./Navbar.css"
 
 export default function Navbar(){
 
 const [menuOpen, setMenuOpen] = useState(false)
-const [theme,setTheme] = useState("dark")
+const [scrolled, setScrolled] = useState(false)
 
 useEffect(()=>{
-document.body.className = theme
-},[theme])
+  const onScroll = () => setScrolled(window.scrollY > 50)
+  window.addEventListener("scroll", onScroll)
+  return () => window.removeEventListener("scroll", onScroll)
+},[])
 
 return(
 
-<nav className="navbar">
+<nav className={`navbar${scrolled ? " scrolled" : ""}`}>
 
 <div className="container nav-wrapper">
 
-<div className="logo">
-TP
-</div>
+<div className="logo">TP</div>
 
 <div
-className="menu-icon"
-onClick={()=>setMenuOpen(!menuOpen)}
+  className="menu-icon"
+  onClick={()=>setMenuOpen(!menuOpen)}
+  aria-label="Toggle menu"
 >
-☰
+  {menuOpen ? <FaTimes size={20}/> : <FaBars size={20}/>}
 </div>
 
 <ul className={menuOpen ? "nav-links active" : "nav-links"}>
 
-<li>
-<a href="#home">Home</a>
-</li>
-
-<li>
-<a href="#services">Services</a>
-</li>
-
-<li>
-<a href="#about">About</a>
-</li>
-
-<li>
-<a href="#skills">Skills</a>
-</li>
-
-<li>
-<a href="#projects">Projects</a>
-</li>
-
-<li>
-<a href="#contact">Contact</a>
-</li>
+  <li><a href="#home" onClick={()=>setMenuOpen(false)}>Home</a></li>
+  <li><a href="#services" onClick={()=>setMenuOpen(false)}>Services</a></li>
+  <li><a href="#about" onClick={()=>setMenuOpen(false)}>About</a></li>
+  <li><a href="#skills" onClick={()=>setMenuOpen(false)}>Skills</a></li>
+  <li><a href="#projects" onClick={()=>setMenuOpen(false)}>Projects</a></li>
+  <li><a href="#contact" onClick={()=>setMenuOpen(false)}>Contact</a></li>
 
 </ul>
 
-<button className="talk-btn" href="https://calendly.com/toluwaowolaja/meeting" target="_blank">
-Let's Talk
-</button>
+<a
+  className="talk-btn"
+  href="https://calendly.com/toluwaowolaja/meeting"
+  target="_blank"
+  rel="noreferrer"
+>
+  Let's Talk
+</a>
 
 </div>
 
 </nav>
-
 
 )
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { trackPage } from './utils/analytics';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Navbar/Hero/Hero';
 import Services from './components/Navbar/Services/Services';
@@ -15,6 +15,10 @@ import WhatsApp from './components/WhatsApp/WhatsApp';
 import Pricing from './components/Pricing/Pricing';
 
 function App() {
+
+useEffect(()=>{
+trackPage(window.location.pathname)
+},[])
 
 return (
   <>

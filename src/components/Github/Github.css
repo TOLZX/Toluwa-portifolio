@@ -1,18 +1,26 @@
 .github{
-padding:100px 0;
+padding:80px 0;
 text-align:center;
 }
 
 .github-btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 20px;
-border:1px solid #333;
-background:#111;
-border-radius:8px;
-text-decoration: none;
+display:inline-flex;
+align-items:center;
+gap:10px;
+margin-top:6px;
+padding:13px 26px;
+border:1px solid var(--border);
+background:var(--card);
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-size:14px;
+font-weight:500;
+transition:border-color 0.2s, background 0.2s, transform 0.2s;
 }
 
 .github-btn:hover{
-background:#222;
+border-color:var(--accent);
+background:var(--accent-glow);
+transform:translateY(-2px);
 }
